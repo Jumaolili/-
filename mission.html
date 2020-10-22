@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+        header,
+        footer {
+            position: relative;
+
+            width: 100%;
+            height: 50px;
+
+            color:white;
+
+            background-color: #515151;
+        }
+        footer {
+
+            text-align: center;
+            line-height: 30px
+        }
+
+        .logo{
+            position: absolute;
+            left: 100px;
+        
+
+            line-height: 50px;
+            font-size: 25px;
+        }
+        header a {
+
+            font-size: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .link {
+            display: inline-block;
+            position: absolute;
+            top:0;
+            right: 50px;
+        }
+
+        .banner {
+            position: relative;
+
+            height: 200px;
+            width: 100%;
+
+            background-color: #66bb33;
+        }
+        .pageBtn {
+            clear: both;
+            position: absolute;
+            bottom: 10px; 
+            right: 140px;
+
+
+
+            background-color: #66bb33;
+        }
+        .pageBtn .active-Btn {
+            
+            position: relative;
+            bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+        }
+
+        .pageBtn div {
+            float: left;
+            margin-left: 10px;
+
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            line-height: 20px;
+
+            opacity: .3;
+            background-color: white;
+        }
+        
+
+        .tabs-container {
+            position: relative;
+
+            width: 100%;
+            height: 50px;
+
+            border-bottom: 1px solid grey;
+
+        }
+
+        .tabs {
+            position: absolute;
+            top: 30px;
+            left: 100px;
+        }
+        
+        .tabs div {
+            float: left;
+            margin-right: -1px;
+
+            width: 80px;
+            height: 20px;
+
+            text-align: center;
+            line-height: 20px;
+            color: #000000;
+            font-size: .7em;
+
+            background-color: grey;
+            border: 1px solid grey;
+            opacity: .3;
+
+
+        }
+
+
+        .tabs .active-tab {
+            border-bottom: 0;
+            background-color: white;
+        }
+
+        .main {
+            height: 100%;
+        }
+
+        .pages-container {
+            
+            margin-left: 90px;
+            margin-right:90px;
+
+            height: 600px;
+            
+
+            background-color: white;
+        }
+ 
+        .pages-container div {
+
+            display: flex;
+
+
+            height: 200px;
+
+        }
+        .pages-container article {
+            flex: 1;
+            
+            margin: 10px;
+
+
+            border: 1px solid grey;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <span class="logo">Logo</span>
+        <div class="link">
+            <a href="#">Github</a>
+            <a href="#">Register</a>
+            <a href="#">Login</a>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="pageBtn">
+            <div class="active-Btn">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="active-tab">HOME</div>
+                <div>PROFILE</div>
+                <div>ABOUT</div>
+            </div>
+
+        </div>
+
+        <div class="pages-container">
+            <div>
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+            <div>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+            <div>
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+        </div>
+    </div>
+
+    <footer>       
+            2018 ife.baidu.com
+    </footer>
+</body>
+</html>
