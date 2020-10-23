@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -67,9 +67,12 @@
             
             position: relative;
             bottom: 10px;
+
             text-align: center;
             line-height: 30px;
             height: 30px;
+
+            opacity: .8;
         }
 
         .pageBtn div {
@@ -84,80 +87,71 @@
             opacity: .3;
             background-color: white;
         }
-        
 
-        .tabs-container {
-            position: relative;
+        nav {
+            margin-top: 40px;
 
             width: 100%;
-            height: 50px;
 
-            border-bottom: 1px solid grey;
+            border-bottom:1px solid #cccccc; /*下侧边框*/
+        }
+
+        nav .nav-container {
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            z-index: 1;
+
+            width: 960px; /*宽度*/
+            
+
 
         }
 
-        .tabs {
-            position: absolute;
-            top: 30px;
-            left: 100px;
+        .nav-container div {
+            padding: 10px 15px;
+            margin-bottom: -1px;
+
+            border: 1px solid #cccccc;
+            border-radius: 10px 10px 0 0;
+
+            background-color: #e9efee;
+
+        }
+        .nav-container .active-nav {
+            background-color: white;
+            border-bottom-color: white;
         }
         
-        .tabs div {
-            float: left;
-            margin-right: -1px;
+       .pages-container {
+           position: relative;
+           margin: 0 auto;
 
-            width: 80px;
-            height: 20px;
+           width: 960px;
+       }
 
-            text-align: center;
-            line-height: 20px;
-            color: #000000;
-            font-size: .7em;
+       .pages-container ul {
+           position: relative;
+           left: -50px;
+           display: flex;
+           margin-top: 10px;
+           justify-content: space-between;
+           flex-wrap: wrap;
 
-            background-color: grey;
-            border: 1px solid grey;
-            opacity: .3;
+           width: 100%
+           
+       }
+       .pages-container ul li{
+           box-sizing: border-box;
+           padding: 70px;
+           margin: 10px;
+           
 
-
-        }
-
-
-        .tabs .active-tab {
-            border-bottom: 0;
-            background-color: white;
-        }
-
-        .main {
-            height: 100%;
-        }
-
-        .pages-container {
-            
-            margin-left: 90px;
-            margin-right:90px;
-
-            height: 600px;
-            
-
-            background-color: white;
-        }
- 
-        .pages-container div {
-
-            display: flex;
+           list-style: none;
+           border: 1px solid #cccccc;
+       }
 
 
-            height: 200px;
-
-        }
-        .pages-container article {
-            flex: 1;
-            
-            margin: 10px;
-
-
-            border: 1px solid grey;
-        }
 
     </style>
 </head>
@@ -172,8 +166,8 @@
     </header>
     <div class="banner">
         <div class="pageBtn">
-            <div class="active-Btn">1</div>
-            <div>2</div>
+            <div>1</div>
+            <div class="active-Btn">2</div>
             <div>3</div>
             <div>4</div>
         </div>
@@ -181,37 +175,31 @@
     </div>
 
     <div class="main">
-        <div class="tabs-container">
-            <div class="tabs">
-                <div class="active-tab">HOME</div>
-                <div>PROFILE</div>
-                <div>ABOUT</div>
+        <nav>
+            <div class="nav-container">
+                <div class="active-nav">HOME</div>
+                <div class="">PROFILE</div>
+                <div class=" end">ABOUT</div>
             </div>
-
-        </div>
+        </nav>
 
         <div class="pages-container">
-            <div>
-                <article></article>
-                <article></article>
-                <article></article>
-            </div>
-            <div>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-            </div>
-            <div>
-                <article></article>
-                <article></article>
-                <article></article>
-            </div>
+            <ul>
+                <li>This is Content 1</li>
+                <li>Maybe Content 2</li>
+                <li>Content 3</li>
+                <li>Content 4</li>
+                <li>Content 5</li>
+                <li>Content 6</li>
+                <li>Content 7</li>
+                <li>Content 8</li>
+                <li>Content 9</li>
+                <li>Content 10</li>
+            </ul>
         </div>
     </div>
-
     <footer>       
-            2018 ife.baidu.com
+            &copy; ife.baidu.com
     </footer>
 </body>
 </html>
