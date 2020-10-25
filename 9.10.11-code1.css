@@ -1,0 +1,598 @@
+﻿/*general csss*/
+* {
+    margin: 0;
+
+}
+
+
+/*page1*/
+.page1-bg {
+    position: relative;
+
+    text-align: center;
+    height: 900px;
+    width: 100%;
+
+    background-image: url(images/bg1-1.jpg);
+}
+
+.page1-title {
+    padding-top: 70px;
+
+    font-size: 50px;
+    font-weight: 100;
+    color: white;
+}
+.page1-word {
+    
+    margin: 70px auto 70px auto;
+
+    width: 650px;
+    height: 100px;
+    font-weight: 100;
+    font-size: 20px;
+    color: white;
+
+    opacity: .6;
+}
+
+.page1-login {
+    margin: 0 auto;
+
+    width: 900px;
+    height: 200px;
+    border: 1px solid white;
+    color: white;
+
+    opacity: .6;
+}
+
+.page1-login p:first-of-type {
+    padding-top: 50px;
+
+    letter-spacing: 4px;
+
+
+}
+
+.page1-login p:last-of-type {
+    padding-top: 10px;
+    
+    letter-spacing: 2px;
+
+    font-size: 10px;
+}
+
+.page1-login .page1-input-box {
+    padding-top: 50px;
+    margin: 0 auto;
+
+    width: 700px;
+    height: 40px;
+}
+
+.page1-input-box input:nth-of-type(1),
+.page1-input-box input:nth-of-type(2) {
+    margin-right: 30px;
+
+    height: 30px;
+    width: 200px;
+    opacity: .3;
+
+    border: 1px solid white;
+}
+
+.page1-input-box input:nth-of-type(3) {
+    height: 36px;
+    width: 80px;
+    
+    opacity: 1;
+}
+
+
+
+
+
+/*   page2  */
+
+.page2-word {
+    height: 200px;
+    width: 100%;
+
+    text-align: center;
+
+}
+
+.page2-word p:nth-child(1) {
+    margin-top: 60px;
+
+    font-size: 3px;
+    letter-spacing: 2px;
+
+}
+
+.page2-word p:nth-child(2) {
+    display: inline-block;
+    margin-top: 20px;
+
+    font-size: 35px;
+    font-weight: 200;
+    width: 600px;
+}
+
+
+.page2-func {
+    margin: 0 auto;
+    position: relative;
+
+    width: 1000px;
+
+
+}
+
+
+
+.page2-func ul { /*小页面集合*/
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /*如何分配顺着弹性容器主轴
+的元素之间及其周围的空间。*/
+    /* align-content: space-around; */
+    width: 100%;
+    list-style: none;
+}
+
+.page2-func ul li {
+    flex: 0 0 50%;
+    clear: both;
+}
+
+.page2-func  ul li img {
+    padding: 20px;
+    float: left;
+}
+
+.page2-func ul li div p:nth-of-type(1) {
+    font-weight: 700;
+}
+
+.page2-func ul li div p:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+
+
+/* page 3*/
+
+.page3 {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 700px;
+    background: url(images/page3.jpg)
+}
+.page3-left {
+    float: left;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+
+    width: 500px;
+    
+
+
+}
+
+.page3-left p {
+    display: inline-block;
+    color: white;
+
+    margin-bottom: 30px;
+}
+
+.page3-left p:nth-of-type(1) {
+    font-size: 35px;
+    font-weight: 100;
+    width: 300px;
+}
+.page3-left p:nth-of-type(2) {
+    position: relative;
+
+    font-size: 8px;
+    font-weight: 100;
+    width: 300px;
+}
+
+.page3-left button {
+    margin-right: 30px;
+
+    width: 200px;
+    height: 50px;
+
+    border-radius: 7px;
+}
+
+.page3-left button:nth-of-type(1) {
+    font-size: 2px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.page3-left button:nth-of-type(2) {
+    
+    font-size: 2px;
+    font-weight: 100;
+    color: white;
+
+    border: .5px solid grey;
+    background-color: transparent;
+}
+
+.page3 {
+    position: relative;
+}
+
+
+.page3-right {
+
+
+    width: 600px;
+    height: 400px;
+
+
+    border: 1px solid white;
+    border-radius: 15px;
+}
+.circle {
+    position: absolute;
+    top: 400px;
+    left: 830px;
+
+    height: 20px;
+    width: 20px;
+
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.page3-right-inner {
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+}
+.page3-right-inner p {
+    margin-top: 20px;
+}
+
+.page3-right-inner p:nth-of-type(1) {
+    color: deepskyblue;
+    font-size: 20px;
+}
+.page3-right-inner-window {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 400px;
+    height: 200px;
+
+    border: 1px solid grey;
+}
+
+.page3-right-inner-window ul {
+    list-style: none;
+}
+
+.page3-right-inner-window ul li {
+    float: left;
+
+    height: 200px;
+    width: 33%;
+}
+
+.page3-right {
+    position: absolute;
+    right: -200px;
+    top: 200px;
+}
+
+
+
+/*  page4*/
+
+
+.page4 {
+    height: 370px;
+    width:100%;
+
+    text-align: center;
+
+    border-bottom: 1px solid grey;
+}
+
+.page4 p {
+    margin: 50px auto;
+
+    font-size: 25px;
+    font-weight: 200;
+}
+
+
+.page4-container {
+    width: 960px;
+    margin: 0 auto;
+
+}
+
+.page4-container ul {
+    display: flex;
+
+    list-style: none;
+}
+
+.page4-container ul li {
+    display: inline-block;
+    flex: 1;
+
+    padding: 30px;
+}
+
+
+
+/*  page5*/
+
+.page5 {
+    margin: 0 auto;
+    width: 960px;
+    height: 900px;
+
+
+}
+
+.page5 div {
+    clear: both;
+    padding: 40px;
+}
+
+
+
+.page5 div:nth-of-type(1) img {
+    padding: 30px;
+    float: left;
+}
+.page5 p {
+    margin: 20px;
+    padding-top: 50px;
+
+    font-size: 20px;
+}
+
+
+.page5 div:nth-of-type(2) img {
+    float: right;
+
+    padding-top: 10px;
+}
+
+
+/* page6*/
+
+
+.page6 {
+    text-align: center;
+}
+
+.page6 p:nth-of-type(1) {
+    margin-top: 30px;
+
+    font-size: 30px;
+    font-weight: 100
+}
+.page6 p:nth-of-type(2) {
+    margin: 0 auto;
+    margin-top: 20px;
+
+    font-weight: 100;
+    color: grey;
+    width: 600px;
+} 
+
+.page6-crew {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.page6-crew ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    list-style: none;
+
+}
+.page6-crew>ul>li {
+    position: relative;
+
+    flex: 0 0 50%;
+    margin-top: 20px;
+}
+
+.page6-crew>ul>li div {
+    width: 250px;
+    height: 200px;
+    background-color: aquamarine;
+
+    border: 1px solid grey;
+}
+
+
+
+.page6-crew>ul>li .page6-NonActive {
+    display: none;
+}
+
+
+.page6-crew>ul>li .page6-Active {
+    position: absolute;
+    top: 0;
+
+
+    background-color: grey;
+    opacity: .7;
+}
+.page6-Active>ul>li a {
+    text-decoration: none;
+    color: white;
+}
+
+.page6-Active>ul>li {
+    position: relative;
+    top: 50px;
+    left: -10px;
+}
+
+
+.page6-Active p {
+    text-align: center;
+    color: white;
+}
+/*  page7*/
+.page7 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 650px;
+}
+.page7-left {
+    position:absolute;
+    top: 50px;
+    left: 250px;
+
+    width: 300px;
+    height: 450px;
+
+    border: 1px solid grey;
+}
+
+.page7-left p {
+    text-align: center;
+    margin-top: 20px;
+
+    font-size: 10px;
+}
+
+.page7-left input {
+    margin-left: 50px;
+    margin-top: 30px;
+
+    width: 200px;
+    height: 30px;
+}
+
+.page7-left textarea {
+    margin-left: 50px;
+    margin-top: 30px;
+
+    width: 200px;
+    height: 70px;
+}
+
+.page7-left button {
+    margin-left: 50px;
+    margin-top: 30px;
+
+    width: 210px;
+    height: 30px;
+    color: white;
+
+    background-color: #202020;
+}
+
+.page7-right {
+    position: absolute;
+    top: 100px;
+    right: 300px;
+
+    width: 300px;
+    height: 450px;
+
+}
+.page7-right>p:nth-of-type(1) {
+
+    font-size: 20px;
+    font-weight: 100;
+
+}
+
+.page7-right>p:nth-of-type(2) {
+    margin-top: 20px;
+
+    font-size: 5px;
+    font-weight: 100;
+}
+
+
+.page7-right ul {
+    padding-left: 0;
+    padding-top: 20px;
+
+    list-style: none;
+
+
+
+    
+}
+
+.page7-right ul li {
+    
+    
+    margin-top: 10px;
+    overflow: hidden;
+
+
+}
+.page7-right ul li div p {
+    position: relative;
+    top: 3px;
+
+    font-size: 15px;
+}
+
+.page7-right img {
+    float: left;
+}
+
+
+
+/* page8*/
+
+.page8 {
+    height: 60px;
+    width: 100%;
+    color: white;
+
+    background-color: #141414;
+}
+
+.page8 ul {
+    display: flex;
+
+    list-style: none;
+}
+
+.page8 ul li {
+    flex: 1;
+    padding: 30px;
+
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    opacity: .7;
+
+}
+
