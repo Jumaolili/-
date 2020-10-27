@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
 }
 
@@ -8,19 +8,19 @@
 
 
 .page1-left1 {
-    position: absolute;
-    bottom: 0;
+    position: absolute; /*左边bar1 绝对定位*/
+    bottom: 0;  /*充满一整列*/
 
-    height: 100%;
-    width: 100px;
+    height: 100%; 
+    width: 100px;  
 
     background-color: #1d2531;
 
 }
 
 .page1-left1-ul {
-    position: absolute;
-    left: -20px;
+    position: absolute;  /*内部ul也绝对定位*/
+    left: -20px;  
     top: 50px;
     
     list-style: none;
@@ -127,7 +127,7 @@
     
 
 
-    border: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 
 .page3-topBar-title {
@@ -255,14 +255,15 @@
 /* page 5*/
 
 
-.page5-white-right {
-    position: relative;
-    top: -2px;
-    left: 1px;
+.page5-white-right {        /*important*/
+    position: absolute;
+    top: 120px;
+    right: 0;
     bottom: 0;
+    left: 0;
     margin-left: 850px; 
 
-
+    overflow: auto;
     
     border: 1px solid grey;
 }
@@ -306,8 +307,10 @@
 }
 
 .page5-white-right-body {
-
-    
+    position:absolute;
+    top: 220px;
+    left: -850px;
+    margin-left: 850px;
     overflow: auto;
 
     width: 100%;
@@ -355,3 +358,4 @@
 
 
 
+/**/
