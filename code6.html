@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        p {
+            border: 3px solid black;
+            border-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <input id="stack-input" type="text">
+    <p id="stack-cont">栈内容：apple-&gt;pear</p>
+    <button id="push-btn">进栈</button>
+    <button id="pop-btn">退栈</button>
+    <button id="font-btn">打印栈顶元素内容</button>
+    <button id="empty-btn">判断栈是否为空</button>
+
+    <script>
+
+        var stack = ["apple", "pear"];
+        var body = document.body;
+        var p = document.getElementById("stack-cont");
+        body, addEventListener("click",btn, false)
+
+        function btn(event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement;
+            switch (target.id) {
+                case "push-btn":
+                    p.innerHTML = "队列内容：";
+                    var input = document.getElementById("stack-input");
+                    stack.push(input.value);
+                    input.value = "";
+                    for (var i = 0; i < stack.length; i++) {
+                        if (i == stack.length - 1) {
+                            p.innerHTML += stack[i];
+                        } else {
+                            p.innerHTML += stack[i] + "-&gt;";
+                        }
+                    }
+                    break;
+
+                case "pop-btn":
+                    p.innerHTML = "队列内容：";
+                    
+                    stack.pop()
+                    
+                    for (var i = 0; i < stack.length; i++) {
+                        if (i == stack.length - 1) {
+                            p.innerHTML += stack[i];
+                        } else {
+                            p.innerHTML += stack[i] + "-&gt;";
+                        }
+                    }
+                    break;
+
+                case "font-btn":
+                    
+
+                    var top = stack.pop()
+                    p.innerHTML += "&nbsp;栈顶：" + top;
+                    
+                    break;
+
+                case "empty-btn":
+                    if (stack.length > 0) {
+                        p.innerHTML += "栈不是空的";
+                    } else {
+                        p.innerHTML += "栈是空的";
+                    }
+                    break;
+            }
+        }
+
+    </script>
+</body>
+</html>

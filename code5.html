@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="queue-input" type="text">
+    <p id="queue-cont">队列内容：apple-&gt;pear</p>
+    <button id="in-btn">入队</button>
+    <button id="out-btn">出队</button>
+    <button id="font-btn">打印队头元素内容</button>
+    <button id="empty-btn">判断队列是否为空</button>
+
+    <script>
+        
+        var body = document.body;
+        var queue = ["apple", "pear"];
+        var p = document.getElementById("queue-cont");
+        body.addEventListener("click", btn, false);
+        function btn(event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement;
+            switch (target.id) {
+                case "in-btn":
+                    //console.log(1);
+                    var input = document.querySelector("input");
+                    //console.log(input.value);
+                    queue.push(input.value);
+
+                    p.innerHTML += "-&gt;" + input.value;
+                    input.value = ""
+                    break;
+
+
+                case "out-btn":
+                    queue.shift();
+                    console.log(queue, queue.length);
+                    p.innerHTML = "队列内容：";
+                    for (var i = 0; i < queue.length; i++) {
+                        console.log(queue[i]);
+                        //if (queue.length == 1) {
+                        //    p.innerHTML += queue[i];
+                        //} else {
+                        //    if (i = queue.length - 1) {
+                        //        p.innerHTML += queue[i];
+                        //    } else {
+                        //        p.innerHTML += queue[i] + "-gt&;";
+                        //    }
+                        if (i == queue.length - 1) {
+                            p.innerHTML += queue[i];
+                        } else {
+                            p.innerHTML += queue[i] + "-&gt;";
+                        }
+                        
+                    }
+                    break;
+
+                case "font-btn":
+
+                    p.innerHTML += "队列头项" + queue[0];
+                    break;
+
+                case "empty-btn":
+                    if (queue.length == 0) {
+                        p.innerHTML += "数组是空的";
+                    } else {
+                        p.innerHTML += "数组不是空的";
+                    }
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
