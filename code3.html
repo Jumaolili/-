@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p></p>
+</body>
+<script>
+    function week(num) {
+        switch (num) {
+            case 0:
+                return "Monday";
+            case 1:
+                return "Tuesday";
+            case 2:
+                return "Wednesday";
+            case 3:
+                return "Thursday";
+            case 4:
+                return "Friday";
+            case 5:
+                return "Saturday";
+            case 6:
+                return "Sunday";
+
+        }
+    }
+
+    function time(date) {
+        var hour = date.getHours(),
+            minute=date.getMinutes(),
+            second = date.getSeconds();
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+        var str = "";
+        if (hour < 12 && hour >= 0) {
+            str = "AM";
+        } else {
+            str = "PM";
+        }
+
+        return hour + ":" + minute + ":" + second +" "+str;
+    }
+    function date() {
+        var p = document.querySelector("p");
+        var date = new Date();
+
+        var Year = date.getFullYear(),
+            Month = date.getMonth() + 1,
+            Day = date.getDate(),
+            Week = week(date.getDay()),
+            Time = time(date);
+
+        p.innerHTML = Year + "-" + Month + "-" + Day + Week + Time;
+    }
+    var timer = setInterval(() => {
+        date();
+    }, 1000);
+</script>
+</html>

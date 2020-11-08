@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <select id="year-select">
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2021">2021</option>
+    </select>
+    <span>年</span>
+
+    <select id="month-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="12">12</option>
+    </select>
+    <span>月</span>
+
+    <select id="day-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="28">28</option>
+        <option class="special" value="29">29</option>
+        <option class="special" value="30">30</option>
+        <option class="special" value="31">31</option>
+    </select>
+    <span>日</span>
+
+    <select id="hour-select">
+        <option value="0">00</option>
+        <option value="1">01</option>
+
+        <option value="23">23</option>
+    </select>
+    <span>时</span>
+
+    <select id="minite-select">
+        <option value="0">0</option>
+        <option value="1">1</option>
+
+        <option>59</option>
+    </select>
+    <span>分</span>
+
+    <select id="second-select">
+        <option value="0">0</option>
+        <option value="1">1</option>
+
+        <option>59</option>
+    </select>
+    <span>秒</span>
+
+    <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+</body>
+
+<script>
+    
+    function clock() {
+
+        var yearValue = selects[0].value,
+            monthValue = selects[1].value-1,
+            dayValue = selects[2].value,
+            hourValue = selects[3].value,
+            minuteValue = selects[4].value,
+            secondValue = selects[5].value;
+
+        
+        var selectTime = new Date(yearValue, monthValue, dayValue, hourValue, minuteValue, secondValue);
+        console.log(selectTime);
+        var nowTime = new Date();
+        //var nowYear = nowTime.getFullYear(),
+        //    nowMonth = nowTime.getMonth() + 1,
+        //    nowDate = nowTime.getDate(),
+        //    nowHour = nowTime.getHours(),
+        //    nowMinute = nowTime.getMinutes(),
+        //    nowSecond = nowTime.getSeconds();
+
+
+
+        var str1 = "";
+
+        //if (nowYear > yearValue) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else if (nowMonth > monthValue) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else if (nowDate > dayValue) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else if (nowHour > nowHour) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else if (nowMinute > minuteValue) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else if (nowSecond > secondValue) {
+        //    str1 += "现在距离 '所选时间' 已经过去";
+        //} else {
+        //    str1 += "现在距离 '所选时间' 还有";
+        //}
+
+
+
+        var SecNow = Math.round(nowTime.getTime() / 1000),
+            SecSelect = Math.round(selectTime.getTime() / 1000);
+        if (SecNow < SecSelect) {
+            str1 += "现在距离 '所选时间' 还有";
+        } else {
+            str1 += "现在距离 '所选时间' 已经过去";
+        }
+        var inter = Math.abs(SecNow - SecSelect);
+
+        var str_year = Math.floor(inter / 31536000),
+            str_month = Math.floor((inter % 31536000) / 2678400),
+            str_day = Math.floor(((inter % 31536000) % 2678400) / 86400),
+            str_hour = Math.floor((((inter % 31536000) % 2678400) % 86400) / 3600),
+            str_minute = Math.floor(((((inter % 31536000) % 2678400) % 86400) % 3600) / 60),
+            str_second = Math.floor(((((inter % 31536000) % 2678400) % 86400) % 3600) % 60);
+
+        var str2 = str1+ str_year + "年" + str_month + "月" + str_day + "日" + str_hour + "时" + str_minute + "分" + str_second + "秒";
+
+        p.innerHTML = str2;
+
+        
+    }
+    function reCompute() {
+        var options = document.querySelectorAll(".special");
+        selects[1].value = selects[1].value;
+        selects[0].value = selects[0].value;
+        if (selects[1].value == 2) {
+
+            options.disabled = "true";
+            
+ 
+        }
+        
+
+
+        clearInterval(timer);
+        var timer = setInterval(clock, 1000);
+    }
+
+    var timer = setInterval(clock, 1000);
+    var selects = document.querySelectorAll("select"),
+        p = document.querySelector("#result-wrapper");
+    var options = document.querySelector
+    for (let i = 0; i < selects.length; i++) {
+        selects[i].data_id = i;
+    }
+    var body = document.body;
+
+    
+
+    body.addEventListener("change", reCompute, false);
+
+</script>
+</html>
