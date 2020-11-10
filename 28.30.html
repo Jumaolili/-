@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<style>
+    li {
+        border: 1px solid grey;
+        margin-top: -1px;
+    }
+    ul {
+        list-style: none;
+    }
+    .actived {
+        background-color: pink;
+    }
+    
+</style>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+    
+</body>
+<script>
+    // 邮箱后缀List参考
+    var postfixList = ['@163.com', '@gmail.com', '@126.com', '@qq.com', '@263.net'];
+    var ul = document.querySelector("#email-sug-wrapper"),
+        input = document.querySelector("#email-input"),
+        body = document.querySelector("body"),
+        lis = document.querySelectorAll("li");
+    var content = "";  //输入内容
+    var NewList = [];
+    var suffix = "";
+    var suffixList = [];
+
+
+
+    function changeList(item) {
+
+        return content + item;
+    }
+    
+
+    function createList(item) {
+        var li = document.createElement("li");   //创建li
+        var txt = document.createTextNode(item);
+        li.appendChild(txt);
+        ul.appendChild(li);
+        li.onmouseover = function () {
+            this.setAttribute("class","actived");  
+        }
+        li.onmouseout = function () {
+            this.setAttribute("class", "")
+        }
+        li.onclick = function () {
+            var text = this.innerHTML;
+
+            input.value = text;
+            clear();
+        }
+    }
+
+    function clear() {   //清除li
+        lis = document.querySelectorAll("li");
+        for (let i = 0; i < lis.length; i++) {
+            ul.removeChild(lis[i]);
+        }
+    }
+
+    function searchSuffix(item) {
+        return item.indexOf(suffix) > 0;
+    }
+
+    
+
+    function check() {
+        clear();
+
+        content = input.value.trim();
+        //对content 进行编码
+
+        if (content != "") {
+            if (content.indexOf("@") > -1) {    //  @ 检测
+
+                suffix = content.substr(content.indexOf("@"));
+                content = content.substr(0, content.indexOf("@"));   // 与 列表项 嫁接的字符串              
+                //console.log(content);
+                
+            } else {
+                suffix = "";
+            }
+
+            if (suffix == "") {
+
+                NewList = postfixList.map(changeList);
+
+                NewList.forEach(createList);
+            }
+            if (suffix != "") {
+                NewList = postfixList.map(changeList);
+
+                suffixList = NewList.filter(searchSuffix);
+                //console.log(suffixList);
+                suffixList.forEach(createList);
+                //console.log(NewList);
+                if (suffixList.length == 0) {
+                    //console.log("yes");
+                    NewList.forEach(createList);
+                }
+            }
+        }
+        if (content == "") {
+            clear();
+        }
+        
+        
+        return;
+    }
+
+    input.addEventListener("keyup", check, false);
+
+    
+    
+
+
+
+
+</script>
+</html>
