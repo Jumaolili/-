@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="a">A</button>
+    <button id="b">B</button>
+    <button id="c">C</button>
+    <div id="cont"></div>
+</body>
+<script>
+    var btn = document.querySelectorAll("button");
+    var body = document.body;
+    show(getHash());
+    
+    body.addEventListener("click", function (e) {  //按钮点击事件
+        e = event || window.event;
+        var target = e.target || document.target;
+        switch (target.id) {
+            case "a":
+                setHash("#a");
+                break;
+            case "b":
+                setHash("#b");
+                break;
+            case "c":
+                setHash("#c");
+                break;
+        }
+    }, false);
+
+    window.onhashchange = function () {
+        switch (getHash()) {
+            case "a":
+                show("a");
+                break;
+            case "b":
+                show("b");
+                break;
+            case "c":
+                show("c");
+                break;
+        }
+    }
+
+    function setHash(str) {    //设置新的hash
+        window.location.hash = str;
+    }
+
+    function getHash() {    //获得hash 的状态值
+        var str = window.location.hash.slice(1);
+        return str;
+    }
+
+    function show(str) { //渲染
+        var div = document.querySelector("#cont");
+        div.innerHTML = str;
+    }
+    //function 解析Hash，获取状态参数() {
+    //    取到需要的值，并返回
+    //}
+
+    //function 渲染函数() {
+    //    内容 = 解析Hash，获取状态参数()
+    //    cont的innerHTML = 内容
+    //}
+
+    //按钮点击事件 = function () {
+    //    设置新的hash
+    //}
+
+    //window.onhashchange = 渲染函数
+
+    //进来先执行一次渲染函数()
+</script>    
+    
+</html>

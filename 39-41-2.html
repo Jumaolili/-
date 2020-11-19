@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="a">A</button>
+    <button id="b">B</button>
+    <button id="c">C</button>
+
+    <button id="d">D</button>
+    <button id="e">E</button>
+    <button id="f">F</button>
+
+
+    <div id="contABC"></div>
+    <div id="contDEF"></div>
+</body>
+
+<script>
+    var body = document.body;
+
+    
+    show();
+
+    body.addEventListener("click", function (e) {
+        e = event || window.event;
+        var target = e.target || document.target;
+        switch (target.id) {
+            case "a":
+
+                setHash("a");
+                break;
+            case "b":
+                setHash("b");
+                break;
+            case "c":
+                setHash("c");
+                break;
+            case "d":
+                setHash("d");
+                break;
+            case "e":
+                setHash("e");
+                break;
+            case "f":
+                setHash("f");
+                break;
+        }
+    }, false);
+
+    window.onhashchange = function () {   //执行了sethash函数后，激活onchangehash事件
+        show();
+    }
+
+    function show() {
+        var arr = anaHash();
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == "a" || arr[i] == "b" || arr[i] == "c") {
+                var div = document.getElementById("contABC");
+                div.innerHTML = arr[i];
+            }
+
+            if (arr[i] == "d" || arr[i] == "e" || arr[i] == "f") {
+                var div = document.getElementById("contDEF");
+                div.innerHTML = arr[i];
+            }
+        }
+    }
+
+    function setHash(str) {    //重设 hash值
+
+        if (str == "a" || str == "b" || str == "c") {
+            if (window.location.hash.indexOf("a") < 0 &&
+                window.location.hash.indexOf("b") < 0 &&
+                window.location.hash.indexOf("c") < 0 ) {
+                window.location.hash += str;
+            } else {
+                var n = window.location.hash.slice(1).replace(/[a-c]/g, str);
+                window.location.hash = n;
+            }
+
+        }
+        if (str == "d" || str == "e" || str == "f") {
+            if (window.location.hash.indexOf("d") < 0 &&
+                window.location.hash.indexOf("e") < 0 &&
+                window.location.hash.indexOf("f") < 0 ) {
+                window.location.hash += str;
+            } else {
+                var n = window.location.hash.slice(1).replace(/[d-f]/g, str);
+                window.location.hash = n;
+            }
+
+        }
+    }
+
+    function anaHash() {  //分析hash里有哪几个 字符
+        var arr = window.location.hash.slice(1).split("");
+        return arr;
+    }
+</script>
+</html>
